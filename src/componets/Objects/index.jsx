@@ -3,8 +3,8 @@ import object from "../../assets/imgs/object.png";
 import arrow from "../../assets/icons/arrow-black.png"
 import "./objects.scss";
 
-function Objects() {
-  
+function Objects({data}) {
+    console.log(data);
   return (
     <section className="objects">
       <div className="container">
