@@ -5,13 +5,15 @@ import Header from "./componets/Header";
 import Hero from "./componets/Hero";
 import News from "./componets/News";
 import Objects from "./componets/Objects";
-// import { useGetObjectsListQuery } from "./api/objects/objects.api";
 import { useGetHomeInfoQuery } from "./api/home/home.api";
 
+
 function App() {
-  // const { data } = useGetObjectsListQuery();
-  const { data } = useGetHomeInfoQuery();
-  // console.log(hero);
+  const { data, isLoading, error } = useGetHomeInfoQuery();
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error...</div>;
+
   console.log(data);
   return (
     <>
