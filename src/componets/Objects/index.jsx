@@ -1,7 +1,8 @@
 import React from "react";
 import object from "../../assets/imgs/object.png";
+import arrow from "../../assets/icons/arrow-black.png"
 import "./objects.scss";
-import { useGetHomeInfoQuery } from "../../api/home/home.api";
+import { useGetHomeInfoQuery } from "../../api/home/home.api"
 
 function Objects() {
   const { data } = useGetHomeInfoQuery();
@@ -10,7 +11,10 @@ function Objects() {
     <section className="objects">
       <div className="container">
         <div className="objects__content">
-          <h2 className="objects__title">Строящиеся объекты</h2>
+          <div className="objects__top">
+            <h2 className="objects__title">Строящиеся объекты</h2>
+            <img src={arrow} alt="arrow" />
+          </div>
           <div className="objects__cards">
             <div className="objects__card">
               <img src={object} alt="" />
