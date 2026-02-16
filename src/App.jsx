@@ -16,11 +16,19 @@ function App() {
   return (
     <>
       <Header />
+<<<<<<< Updated upstream
       <Hero data={data} />
       {/* <Objects data={data} /> */}
       <News />
       <Contacts />
       <Footer />
+=======
+      <Hero/>
+      <Objects/>
+      <News/>
+      <Contacts/>
+      <Footer/>
+>>>>>>> Stashed changes
     </>
   );
 }
