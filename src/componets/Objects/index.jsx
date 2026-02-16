@@ -2,17 +2,11 @@ import React from "react";
 import object from "../../assets/imgs/object.png";
 import arrow from "../../assets/icons/arrow-black.png"
 import "./objects.scss";
-import { useGetHomeInfoQuery } from "../../api/home/home.api"
+// import { useGetHomeInfoQuery } from "../../api/home/home.api"
 
-<<<<<<< Updated upstream
 function Objects({data}) {
     console.log(data);
-=======
-function Objects() {
-  const { data } = useGetHomeInfoQuery();
-  console.log(data);
 
->>>>>>> Stashed changes
   return (
     <section className="objects">
       <div className="container">
@@ -52,10 +46,7 @@ function Objects() {
               <h3 className="objects__card-title">КД “Panorama Park”</h3>
               <button className="objects__card-btn">О проекте</button>
             </div>
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
           </div>
         </div>
       </div>
