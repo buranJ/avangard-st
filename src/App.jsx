@@ -8,6 +8,7 @@ import Objects from "./componets/Objects";
 import { useGetHomeInfoQuery } from "./api/home/home.api";
 
 
+
 function App() {
   const { data, isLoading, error } = useGetHomeInfoQuery();
 
@@ -19,7 +20,7 @@ function App() {
     <>
       <Header />
       <Hero data={data} />
-      {/* <Objects data={data} /> */}
+      <Objects />
       <News />
       <Contacts />
       <Footer />

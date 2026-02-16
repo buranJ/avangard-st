@@ -1,12 +1,15 @@
 import React from "react";
 import object from "../../assets/imgs/object.png";
-import arrow from "../../assets/icons/arrow-black.png"
+import arrow from "../../assets/icons/arrow-black.png";
 import "./objects.scss";
-// import { useGetHomeInfoQuery } from "../../api/home/home.api"
+import { useGetObjectsListQuery } from "../../api/objects/objects.api";
 
-function Objects({data}) {
-    console.log(data);
+function Objects() {
+  const { data, isLoading, error } = useGetObjectsListQuery();
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error...</div>;
 
+  console.log(data);
   return (
     <section className="objects">
       <div className="container">
@@ -46,7 +49,6 @@ function Objects({data}) {
               <h3 className="objects__card-title">КД “Panorama Park”</h3>
               <button className="objects__card-btn">О проекте</button>
             </div>
-
           </div>
         </div>
       </div>
