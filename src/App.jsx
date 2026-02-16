@@ -5,16 +5,19 @@ import Header from "./componets/Header";
 import Hero from "./componets/Hero";
 import News from "./componets/News";
 import Objects from "./componets/Objects";
+import { useGetObjectsListQuery } from "./api/objects/objects.api";
 
 function App() {
+  const { data } = useGetObjectsListQuery();
+  // console.log(data);
   return (
     <>
       <Header />
-      <Hero/>
-      <Objects/>
-      <News/>
-      <Contacts/>
-      <Footer/>
+      <Hero />
+      <Objects data={data} />
+      <News />
+      <Contacts />
+      <Footer />
     </>
   );
 }

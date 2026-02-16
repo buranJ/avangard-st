@@ -2,11 +2,9 @@ import React from "react";
 import object from "../../assets/imgs/object.png";
 import arrow from "../../assets/icons/arrow-black.png"
 import "./objects.scss";
-import { useGetHomeInfoQuery } from "../../api/home/home.api"
 
 function Objects() {
-  const { data } = useGetHomeInfoQuery();
-  console.log(data);
+  
   return (
     <section className="objects">
       <div className="container">
