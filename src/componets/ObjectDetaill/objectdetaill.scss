@@ -1,0 +1,60 @@
+.detail {
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+    }
+    &__title {
+        font-size: 50px;
+        font-weight: 700;
+        text-align: center;
+    }
+    &__info {
+        font-size: 25px;
+        color: rgba(0, 9, 27, 0.7);
+    }
+    &__left {
+        max-width: 503px;
+        margin-right: 50px;
+    }
+    &__btns {
+        display: flex;
+        flex-wrap: wrap;
+            gap: 20px;
+
+    }
+    &__btn {
+        font-size: 20px;
+        font-weight: 500;
+        border: 1px solid rgba(0, 65, 125, 1);
+        border-radius: 40px;
+        width: 240px;
+        height: 42px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+
+    }
+    &__rigth {
+        position: relative;
+    }
+    &__blog {
+        display: flex;
+        position: absolute;
+        top: 500px;
+        right: 250px;
+        flex-direction: column;
+    }
+    &__strit {
+        font-size: 30px;
+        color: aliceblue;
+        text-align: center;
+    }
+    &__blog-btn {
+        font-size: 25px;
+        border: 1px solid rgba(255, 255, 255, 1);
+        border-radius: 30px;
+        color: rgba(255, 255, 255, 1);
+        padding: 5px;
+    }
+}
