@@ -18,8 +18,8 @@ function App() {
   console.log(data);
   return (
     <>
-      {/* <ObjectDetail /> */}
-      <Numbers />
+      <ObjectDetail />
+      {/* <Numbers /> */}
     </>
   );
 }

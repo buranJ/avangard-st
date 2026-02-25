@@ -1,11 +1,49 @@
 .numbers {
+    &__title {
+        margin-top: 90px;
+        font-weight: 700;
+        font-size: 50px;
+        text-align: center;
+    }
     &__wrap {
+        margin-top: 70px;
         display: flex;
         align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 48px;
     }
     &__content {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        width: 70%;
+        gap: 48px;
     }
+
+    &__btn-info {
+        border: 1px solid #00417D;
+        background-color: #00417D;
+        margin-top: 24px;
+        width: 340px;
+        height: 108px;
+        text-align: center;
+        border-radius: 50px;
+    }
+    &__btn-num {
+        font-weight: 600;
+        font-size: 40px;
+        padding-top: 20px;
+        color: white;
+    
+
+    }
+    &__btn-text {
+        font-size: 20px;
+        color: white;
+
+    }
+    
 }
+
