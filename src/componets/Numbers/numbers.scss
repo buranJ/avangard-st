@@ -1,0 +1,11 @@
+.numbers {
+    &__wrap {
+        display: flex;
+        align-items: center;
+    }
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}

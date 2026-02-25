@@ -7,6 +7,7 @@ import News from "./componets/News";
 import Objects from "./componets/Objects";
 import { useGetHomeInfoQuery } from "./api/home/home.api";
 import ObjectDetail from "./pages/ObjectDetail/ObjectDetail";
+import Numbers from "./componets/Numbers";
 
 function App() {
   const { data, isLoading, error } = useGetHomeInfoQuery();
@@ -17,7 +18,8 @@ function App() {
   console.log(data);
   return (
     <>
-      <ObjectDetail />
+      {/* <ObjectDetail /> */}
+      <Numbers />
     </>
   );
 }
