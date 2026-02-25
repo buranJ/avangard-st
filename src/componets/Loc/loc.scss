@@ -1,0 +1,41 @@
+.loc {
+    &__content {
+        display: flex;
+        align-items: center;
+    }
+    &__cart {
+        border-radius: 30px;
+        iframe {
+            border-radius: 30px;
+        }
+    }
+    &__info {
+        max-width: 503px;
+
+    }
+    &__title {
+        font-weight: 700;
+        font-size: 50px;
+
+    }
+    &__text {
+        margin-top: 70px;
+        font-weight: 400;
+        font-size: 25px;
+    }
+
+    &__bottom {
+        margin-top: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 40px;
+    }
+    &__bottom-img {
+        height: 388px;
+        img {
+            height: 100%;
+        }
+    }
+
+}

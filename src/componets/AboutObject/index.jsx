@@ -1,6 +1,6 @@
 import Panorama from "../../assets/imgs/PanoramaParkDay.png"
 import "./objectdetaill.scss"
-function ObjectDetaill() {
+function AboutObject() {
   return (
     <section className='detail'>
         <div className="container">
@@ -32,4 +32,4 @@ function ObjectDetaill() {
   )
 }
 
-export default ObjectDetaill
+export default AboutObject
