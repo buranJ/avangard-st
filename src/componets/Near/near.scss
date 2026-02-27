@@ -1,0 +1,79 @@
+.near {
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__title {
+        font-family: Google Sans;
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 50px;
+        color: #00091B;
+        line-height: 110.00000000000001%;
+        letter-spacing: 0%;
+
+    }
+
+    &__cards {
+        display: flex;
+        justify-content: space-between;
+        gap: 68px;
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        position: relative;
+        height: 330px;
+
+
+        ::before {
+            content: '';
+            background-image: url("../../assets/imgs/line.png");
+            background-repeat: no-repeat;
+            position: absolute;
+            top: -20px;
+            left: -25px;
+            width: 100%;
+            height: 350px;
+            z-index: -1;
+
+        }
+
+        &-title {
+            font-family: Google Sans;
+            font-weight: 500;
+            font-style: Medium;
+            font-size: 30px;
+            color: #00091B;
+            line-height: 110.00000000000001%;
+            letter-spacing: 0%;
+
+        }
+
+        &-wrap {
+            position: relative;
+        }
+
+        &-time {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-family: Google Sans;
+            font-weight: 500;
+            font-style: Medium;
+            font-size: 20px;
+            color: #FFFFFF;
+            line-height: 110.00000000000001%;
+            letter-spacing: 0%;
+            text-align: center;
+            background-color: #00091B;
+            padding: 10px 20px;
+            border-radius: 22px;
+
+        }
+    }
+}
