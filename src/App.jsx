@@ -3,7 +3,7 @@ import Contacts from "./componets/Contacts";
 import Footer from "./componets/Footer";
 import Header from "./componets/Header";
 import Hero from "./componets/Hero";
-import News from "./componets/News";
+import News from "./pages/News/News";
 import Objects from "./componets/Objects";
 import { useGetHomeInfoQuery } from "./api/home/home.api";
 import ObjectDetail from "./pages/ObjectDetail/ObjectDetail";
@@ -11,6 +11,8 @@ import Numbers from "./componets/Numbers";
 import Burger from "./componets/Burger";
 import Panorama from "./componets/Panorama";
 import Numeration from "./componets/Numeration";
+import Realized from "./pages/Realized/Realized";
+import RealizedCard from "./pages/RealizedCard";
 
 
 
@@ -23,7 +25,10 @@ function App() {
   console.log(data);
   return (
     <>
-      <ObjectDetail />
+      {/* <ObjectDetail /> */}
+      {/* <Realized/> */}
+      {/* <News/> */}
+      <RealizedCard/>
       {/* <Numbers /> */}
     </>
   );

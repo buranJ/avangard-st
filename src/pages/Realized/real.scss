@@ -1,0 +1,124 @@
+.real {
+    padding: 70px 0;
+    background-color: #e0dcdc;
+
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__title {
+        font-family: Google Sans;
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 50px;
+        color: #00091B;
+        line-height: 110.00000000000001%;
+        letter-spacing: 0%;
+
+    }
+
+    &__btns {
+        display: flex;
+        margin-top: 50px;
+        border-radius: 31px;
+          border: 2px solid #00417D;
+    }
+
+    &__btn {
+        font-family: Google Sans;
+        font-weight: 500;
+        font-style: Medium;
+        font-size: 30px;
+        line-height: 110.00000000000001%;
+        letter-spacing: 0%;
+        text-align: center;
+        padding: 15px 60px;  
+       
+        // border-radius: 31px;
+        border: 0;
+
+        &-bot {
+            font-family: Google Sans;
+            font-weight: 500;
+            font-style: Medium;
+            font-size: 20px;
+            color: #FFFFFF;
+            line-height: 110.00000000000001%;
+            letter-spacing: 0%;
+            text-align: center;
+            padding: 15px 30px;
+            background-color: #00417D;
+            border: 0;
+            border-radius: 31px;
+            margin-top: 70px;
+
+        }
+
+    }
+
+    &__btn1 {
+        background-color: #00417D;
+        color: #fff;
+        border-radius: 27px;
+    }
+
+    &__btn2 {
+        color: #00417D;
+      
+        background: none;
+      
+    }
+
+    &__cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 39px;
+        margin-top: 70px;
+
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 28px;
+        padding: 10px;
+
+        background-color: #FFFFFF;
+
+        &-title {
+            font-family: Google Sans;
+            font-weight: 500;
+            font-style: Medium;
+            font-size: 30px;
+            color: #00091B;
+            line-height: 110.00000000000001%;
+            letter-spacing: 0%;
+            text-align: center;
+            margin-top: 16px;
+
+        }
+
+        &-btn {
+            font-family: Google Sans;
+            font-weight: 500;
+            font-style: Medium;
+            font-size: 20px;
+            color: #fff;
+            line-height: 110.00000000000001%;
+            letter-spacing: 0%;
+            text-align: center;
+            padding: 10px 20px;
+            border-radius: 22px;
+            background-color: #00091B;
+            transform: translateY(28px);
+
+        }
+    }
+
+
+}

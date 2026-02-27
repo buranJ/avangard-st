@@ -1,0 +1,54 @@
+.realized {
+    background-color: #e8e3e3;
+    padding: 70px 0;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 70px;
+
+    }
+
+    &__top {
+        display: flex;
+        gap: 107px;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 70px;
+
+        &-btn {
+            background: none;
+            border: 0;
+        }
+
+        &-title {
+            font-family: Google Sans;
+            font-weight: 700;
+            font-style: Bold;
+            font-size: 50px;
+            color: #00091B;
+            line-height: 110.00000000000001%;
+            letter-spacing: 0%;
+
+
+        }
+    }
+
+    &__text {
+        font-family: Google Sans;
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 25px;
+        color: #00091BB2;
+        line-height: 35px;
+        letter-spacing: 0%;
+        margin-top: 70px;
+
+
+    }
+}
+.swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-horizontal.swiper-pagination-bullets {
+    background: red;
+    margin-top: 200px;
+}
