@@ -8,6 +8,11 @@ import Objects from "./componets/Objects";
 import { useGetHomeInfoQuery } from "./api/home/home.api";
 import ObjectDetail from "./pages/ObjectDetail/ObjectDetail";
 import Numbers from "./componets/Numbers";
+import Burger from "./componets/Burger";
+import Panorama from "./componets/Panorama";
+import Numeration from "./componets/Numeration";
+
+
 
 function App() {
   const { data, isLoading, error } = useGetHomeInfoQuery();

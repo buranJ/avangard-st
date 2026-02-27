@@ -9,8 +9,12 @@ function ObjectDetail() {
     <div>
       {/* <BeforAfter /> */}
       {/* <ObjectDetaill/> */}
+<<<<<<< Updated upstream
       {/* <Loc />
       <Near/> */}
+=======
+      
+>>>>>>> Stashed changes
     </div>
   );
 }

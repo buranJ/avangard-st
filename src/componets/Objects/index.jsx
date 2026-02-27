@@ -19,36 +19,19 @@ function Objects() {
             <img src={arrow} alt="arrow" />
           </div>
           <div className="objects__cards">
-            <div className="objects__card">
-              <img src={object} alt="" />
-              <h3 className="objects__card-title">КД “Panorama Park”</h3>
+            {data.map((item) => (<div className="objects__card">
+              <div className="objects__card-img-wrapper">
+              <div className="objects__card-img1-wrapper">
+              <img className="objects__card-img1" src={item.imagebg} alt="" />
+              </div>
+              <img className="objects__card-img2" src={item.imagepng} alt="" />
+              </div>
+              <h3 className="objects__card-title">{item.title}</h3>
+              <p className="objects__card-desc">Жилой комплекс премиум класса
+                ул. Токомбаева 26/1
+                8 многоэтажных блоков</p>
               <button className="objects__card-btn">О проекте</button>
-            </div>
-            <div className="objects__card">
-              <img src={object} alt="" />
-              <h3 className="objects__card-title">КД “Panorama Park”</h3>
-              <button className="objects__card-btn">О проекте</button>
-            </div>
-            <div className="objects__card">
-              <img src={object} alt="" />
-              <h3 className="objects__card-title">КД “Panorama Park”</h3>
-              <button className="objects__card-btn">О проекте</button>
-            </div>
-            <div className="objects__card">
-              <img src={object} alt="" />
-              <h3 className="objects__card-title">КД “Panorama Park”</h3>
-              <button className="objects__card-btn">О проекте</button>
-            </div>
-            <div className="objects__card">
-              <img src={object} alt="" />
-              <h3 className="objects__card-title">КД “Panorama Park”</h3>
-              <button className="objects__card-btn">О проекте</button>
-            </div>
-            <div className="objects__card">
-              <img src={object} alt="" />
-              <h3 className="objects__card-title">КД “Panorama Park”</h3>
-              <button className="objects__card-btn">О проекте</button>
-            </div>
+            </div>))}
           </div>
         </div>
       </div>

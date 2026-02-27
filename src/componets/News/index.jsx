@@ -1,8 +1,14 @@
 import arrow from "../../assets/icons/arrow.png"
 import parking from "../../assets/imgs/parking.png"
 import "./news.scss"
+import { useGetSmiNewsQuery } from "../../api/news/news.api";
 
 function News() {
+      const { data, isLoading, error } = useGetSmiNewsQuery();
+      if (isLoading) return <div>Loading...</div>;
+      if (error) return <div>Error...</div>;
+      console.log(data);
+      
     return (
         <section className="news">
             <div className="container">

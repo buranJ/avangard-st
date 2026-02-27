@@ -93,6 +93,11 @@
 
     &__burger {
         display: none;
+
+        &-btn{
+            background: none;
+            border:0;
+        }
     }
 }
 

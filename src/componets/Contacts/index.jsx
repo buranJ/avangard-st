@@ -1,6 +1,11 @@
 import "./contacts.scss"
+import { useGetContactQuery } from "../../api/contact/contact.api";
 
 function Contacts() {
+    const { data, isLoading, error } = useGetContactQuery();
+    if (isLoading) return <div>Loading...</div>;
+    if (error) return <div>Error...</div>;
+    console.log(data);
     return (
         <section className="contacts">
             <div className="container">
@@ -13,8 +18,8 @@ function Contacts() {
                             <option value="" className="contacts__form-option">Сотрудничество</option>
                             <option value="" className="contacts__form-option">Предложения</option>
                         </select>
-                        <input className="contacts__form-input" type="text" placeholder="Ваше имя"  />
-                        <input className="contacts__form-input" type="number" name="" id=""  />
+                        <input className="contacts__form-input" type="text" placeholder="Ваше имя" />
+                        <input className="contacts__form-input" type="number" name="" id="" />
                         <button className="contacts__form-btn">Отправить</button>
                     </form>
                     <div className="contacts__right">
