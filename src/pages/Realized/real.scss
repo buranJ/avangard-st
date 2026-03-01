@@ -9,6 +9,19 @@
         align-items: center;
     }
 
+    &__top {
+        display: flex;
+        gap: 20%;
+        align-items: center;
+        width: 100%;
+
+
+        &-btn {
+            background: none;
+            border: 0;
+        }
+    }
+
     &__title {
         font-family: Google Sans;
         font-weight: 700;
@@ -24,7 +37,7 @@
         display: flex;
         margin-top: 50px;
         border-radius: 31px;
-          border: 2px solid #00417D;
+        border: 2px solid #00417D;
     }
 
     &__btn {
@@ -35,8 +48,8 @@
         line-height: 110.00000000000001%;
         letter-spacing: 0%;
         text-align: center;
-        padding: 15px 60px;  
-       
+        padding: 15px 60px;
+
         // border-radius: 31px;
         border: 0;
 
@@ -67,9 +80,9 @@
 
     &__btn2 {
         color: #00417D;
-      
+
         background: none;
-      
+
     }
 
     &__cards {
@@ -121,4 +134,80 @@
     }
 
 
+}
+
+@media (max-width:1024px) {
+    .real {
+        padding-left: 50px;
+        padding-right: 50px;
+
+        &__top {
+            gap: 10%;
+        }
+    }
+}
+
+@media (max-width:900px) {
+    .real {
+        padding-left: 20px;
+        padding-right: 20px;
+
+        &__btn {
+            padding: 15px;
+        }
+
+        &__card {
+            img {
+                width: 300px;
+            }
+        }
+    }
+}
+
+@media (max-width:600px) {
+    .real {
+        padding: 50px 30px;
+
+        &__top {
+            gap: 18px;
+
+            img {
+                width: 20px;
+            }
+        }
+
+        &__title {
+            font-size: 24px;
+        }
+
+        &__btns {
+            margin-top: 30px;
+        }
+
+        &__btn {
+            font-size: 15px;
+            padding: 10px 20px;
+            span{
+                display: none;
+            }
+            &-bot{
+                display: none;
+            }
+        }
+        &__btn2{
+            padding-left: 0;
+        }
+        &__cards{
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        &__card {
+            img {
+                width: 350px;
+            }
+        }
+
+    }
 }

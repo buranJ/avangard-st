@@ -20,84 +20,112 @@ function News() {
                 <img src={news} alt="image" />
                 <button className="news__card-btn">25.07.2024</button>
               </div>
+              <div className="news__card-mb">
               <h3 className="news__card-title">
                 Стандарт Паркинга в современном ЖК
               </h3>
+              <button className=" news__card-btn-mb">25.07.2024</button>
+              </div>
+            </div>
+               <div className="news__card">
+              <div className="news__card-img">
+                <img src={news} alt="image" />
+                <button className="news__card-btn">25.07.2024</button>
+              </div>
+              <div className="news__card-mb">
+              <h3 className="news__card-title">
+                Стандарт Паркинга в современном ЖК
+              </h3>
+              <button className=" news__card-btn-mb">25.07.2024</button>
+              </div>
+            </div>
+            <div className="news__card">
+              <div className="news__card-img">
+                <img src={news} alt="image" />
+                <button className="news__card-btn">25.07.2024</button>
+              </div>
+              <div className="news__card-mb">
+              <h3 className="news__card-title">
+                Стандарт Паркинга в современном ЖК
+              </h3>
+              <button className=" news__card-btn-mb">25.07.2024</button>
+              </div>
             </div>
               <div className="news__card">
               <div className="news__card-img">
                 <img src={news} alt="image" />
                 <button className="news__card-btn">25.07.2024</button>
               </div>
+              <div className="news__card-mb">
               <h3 className="news__card-title">
                 Стандарт Паркинга в современном ЖК
               </h3>
+              <button className=" news__card-btn-mb">25.07.2024</button>
+              </div>
+            </div>
+               <div className="news__card">
+              <div className="news__card-img">
+                <img src={news} alt="image" />
+                <button className="news__card-btn">25.07.2024</button>
+              </div>
+              <div className="news__card-mb">
+              <h3 className="news__card-title">
+                Стандарт Паркинга в современном ЖК
+              </h3>
+              <button className=" news__card-btn-mb">25.07.2024</button>
+              </div>
+            </div>
+             <div className="news__card">
+              <div className="news__card-img">
+                <img src={news} alt="image" />
+                <button className="news__card-btn">25.07.2024</button>
+              </div>
+              <div className="news__card-mb">
+              <h3 className="news__card-title">
+                Стандарт Паркинга в современном ЖК
+              </h3>
+              <button className=" news__card-btn-mb">25.07.2024</button>
+              </div>
             </div>
               <div className="news__card">
               <div className="news__card-img">
                 <img src={news} alt="image" />
                 <button className="news__card-btn">25.07.2024</button>
               </div>
+              <div className="news__card-mb">
               <h3 className="news__card-title">
                 Стандарт Паркинга в современном ЖК
               </h3>
+              <button className=" news__card-btn-mb">25.07.2024</button>
+              </div>
             </div>
               <div className="news__card">
               <div className="news__card-img">
                 <img src={news} alt="image" />
                 <button className="news__card-btn">25.07.2024</button>
               </div>
+              <div className="news__card-mb">
               <h3 className="news__card-title">
                 Стандарт Паркинга в современном ЖК
               </h3>
+              <button className=" news__card-btn-mb">25.07.2024</button>
+              </div>
             </div>
-              <div className="news__card">
+             <div className="news__card">
               <div className="news__card-img">
                 <img src={news} alt="image" />
                 <button className="news__card-btn">25.07.2024</button>
               </div>
+              <div className="news__card-mb">
               <h3 className="news__card-title">
                 Стандарт Паркинга в современном ЖК
               </h3>
-            </div>
-              <div className="news__card">
-              <div className="news__card-img">
-                <img src={news} alt="image" />
-                <button className="news__card-btn">25.07.2024</button>
+              <button className=" news__card-btn-mb">25.07.2024</button>
               </div>
-              <h3 className="news__card-title">
-                Стандарт Паркинга в современном ЖК
-              </h3>
-            </div>
-              <div className="news__card">
-              <div className="news__card-img">
-                <img src={news} alt="image" />
-                <button className="news__card-btn">25.07.2024</button>
-              </div>
-              <h3 className="news__card-title">
-                Стандарт Паркинга в современном ЖК
-              </h3>
-            </div>
-              <div className="news__card">
-              <div className="news__card-img">
-                <img src={news} alt="image" />
-                <button className="news__card-btn">25.07.2024</button>
-              </div>
-              <h3 className="news__card-title">
-                Стандарт Паркинга в современном ЖК
-              </h3>
-            </div>
-              <div className="news__card">
-              <div className="news__card-img">
-                <img src={news} alt="image" />
-                <button className="news__card-btn">25.07.2024</button>
-              </div>
-              <h3 className="news__card-title">
-                Стандарт Паркинга в современном ЖК
-              </h3>
             </div>
            
           </div>
+          <button className="news__btn">Загрузить еще</button>
         </div>
       </div>
     </section>

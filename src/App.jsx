@@ -1,5 +1,5 @@
 import "./App.css";
-import Contacts from "./componets/Contacts";
+import Contacts from "./pages/Contacts/Contacts";
 import Footer from "./componets/Footer";
 import Header from "./componets/Header";
 import Hero from "./componets/Hero";
@@ -13,6 +13,8 @@ import Panorama from "./componets/Panorama";
 import Numeration from "./componets/Numeration";
 import Realized from "./pages/Realized/Realized";
 import RealizedCard from "./pages/RealizedCard";
+import Media from "./pages/Media/Media";
+import Technical from "./pages/Techical/Technical";
 
 
 
@@ -28,7 +30,10 @@ function App() {
       {/* <ObjectDetail /> */}
       {/* <Realized/> */}
       {/* <News/> */}
-      <RealizedCard/>
+      {/* <RealizedCard/> */}
+      {/* <Media/> */}
+      {/* <Contacts/> */}
+      <Technical/>
       {/* <Numbers /> */}
     </>
   );
