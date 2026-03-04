@@ -15,7 +15,7 @@ import Realized from "./pages/Realized/Realized";
 import RealizedCard from "./pages/RealizedCard";
 import Media from "./pages/Media/Media";
 import Technical from "./pages/Techical/Technical";
-
+import About from "./pages/About/About";
 
 
 function App() {
@@ -33,8 +33,9 @@ function App() {
       {/* <RealizedCard/> */}
       {/* <Media/> */}
       {/* <Contacts/> */}
-      <Technical/>
+      {/* <Technical/> */}
       {/* <Numbers /> */}
+      <About />
     </>
   );
 }

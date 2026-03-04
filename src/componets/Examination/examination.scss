@@ -1,0 +1,19 @@
+.examination {
+    margin-top: 70px;
+    &__content {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    &__title {
+        font-weight: 700;
+        font-size: 50px;
+    }
+    &__text {
+        margin-top: 40px;
+        font-size: 20px;
+    }
+    &__img {
+        margin-top: 60px;
+    }
+}

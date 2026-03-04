@@ -1,0 +1,39 @@
+.material {
+    &__content {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;  
+        text-align: center;
+    }
+    &__title {
+        font-weight: 700;
+        font-size: 50px;
+    }
+    &__info {
+        margin-top: 15px;
+        font-size: 20px;
+    }
+    &__partners {
+        margin-top: 30px;
+        margin-top: 30px;
+    }
+
+    &__partners-subtitle {
+        margin-top: 15px;
+        font-weight: 500;
+        font-size: 30px;
+    }
+    &__partners-wrap {
+        display: flex;
+        gap: 60px;
+    }
+
+    &__parners-list {
+        text-align: start;
+        font-size: 20px;
+    }
+    &__parners-text {
+        margin-top: 30px;
+        font-size: 20px;
+    }
+}
