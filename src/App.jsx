@@ -29,13 +29,13 @@ function App() {
     <>
       {/* <ObjectDetail /> */}
       {/* <Realized/> */}
-      {/* <News/> */}
+      <News/>
       {/* <RealizedCard/> */}
       {/* <Media/> */}
       {/* <Contacts/> */}
       {/* <Technical/> */}
       {/* <Numbers /> */}
-      <About />
+      {/* <About /> */}
     </>
   );
 }

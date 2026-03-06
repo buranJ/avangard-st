@@ -54,6 +54,12 @@
         cursor: pointer;
 
 
+        &-bg {
+            width: 330px;
+            height: 240px;
+            border-radius: 21px;
+        }
+
         &-title {
             font-family: Google Sans;
             font-weight: 500;
@@ -205,7 +211,8 @@
                 }
             }
         }
-        &__btn{
+
+        &__btn {
             display: block;
         }
     }
