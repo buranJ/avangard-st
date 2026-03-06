@@ -1,0 +1,142 @@
+.construction {
+  padding: 80px 0;
+
+  &__title {
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  &__text {
+    text-align: center;
+    margin-top: 15px;
+    color: #555;
+  }
+
+  &__calendar-wrapper {
+    z-index: 2;
+    top: 390px;
+    right: 220px;
+    position: absolute;
+    width: 220px; 
+    cursor: pointer;
+
+    .contruction__calendar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid #fff;
+      padding: 10px 15px;
+      border-radius: 10px;
+      background: #fff;
+      transition: all 0.3s;
+
+      &.open {
+        border-color: #0d3b70;
+      }
+
+      &-img {
+        width: 30px;
+        height: 30px;
+        border: none;
+      }
+
+      &-arrow {
+        transition: transform 0.3s;
+        &.rotate {
+          transform: rotate(180deg);
+        }
+      }
+
+      &-date {
+        font-size: 18px;
+        font-weight: 500;
+        color: #333;
+      }
+    }
+
+    .construction__calendar-dropdown {
+      position: absolute;
+      top: 110%;
+      left: 0;
+      width: 100%;
+      border: 1px solid #1e5fa8;
+      border-radius: 8px;
+      background: #fff;
+      z-index: 10;
+      max-height: 200px;
+      overflow-y: auto;
+
+      .construction__calendar-dropdown-item {
+        padding: 10px 12px;
+        cursor: pointer;
+        border-bottom: 1px solid #e0e0e0;
+
+        &:hover {
+          background: #f0f0f0;
+        }
+      }
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+
+    button {
+      padding: 15px 40px;
+      border-radius: 50px;
+      border: 2px solid #1e5fa8;
+      background: transparent;
+      cursor: pointer;
+      font-size: 30px;
+      gap: 20px;
+      transition: all 0.3s;
+
+      &:hover {
+        background: #1e5fa8;
+        color: white;
+      }
+    }
+
+    .active {
+        position: relative;
+      background: #1e5fa8;
+      color: white;
+      border: 2px solid #1e5fa8;
+    }
+  }
+
+  &__slider {
+    margin-top: 40px;
+  }
+
+  &__main {
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+  }
+
+  &__thumbs {
+    margin-top: 15px;
+
+    .swiper-slide {
+      cursor: pointer;
+    }
+
+    .swiper-slide-thumb-active {
+      opacity: 1;
+      border: 2px solid #1e5fa8;
+      border-radius: 6px;
+    }
+
+    img {
+      gap: 10px;
+      border-radius: 6px;
+    }
+  }
+}

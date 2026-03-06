@@ -1,0 +1,43 @@
+.certificates {
+    margin-top: 70px;
+    &__title {
+        font-weight: 700;
+        font-size: 50px;
+        text-align: center;
+    }
+    &__info {
+        margin-top: 30px;
+        font-size: 20px;
+        text-align: start;
+    }
+    &__list {
+        margin-top: 10px;
+        display: flex;
+        font-size: 20px;
+        flex-direction: column;
+    }
+        .swiper {
+            margin-top: 50px;
+      width: 100%;
+    }
+
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+    }
+
+  }
+
+
+    img {
+      width: 100%;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+
+    p {
+      margin-top: 15px;
+      font-size: 18px;
+      line-height: 1.4;
+      text-align: center;
+    }
