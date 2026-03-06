@@ -29,9 +29,9 @@ function App() {
     <>
       {/* <ObjectDetail /> */}
       {/* <Realized/> */}
-      <News/>
+      {/* <News/> */}
       {/* <RealizedCard/> */}
-      {/* <Media/> */}
+      <Media/>
       {/* <Contacts/> */}
       {/* <Technical/> */}
       {/* <Numbers /> */}

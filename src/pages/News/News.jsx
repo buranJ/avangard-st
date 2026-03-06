@@ -1,7 +1,6 @@
 import React from "react";
 import "./news.scss";
 import arrow from "../../assets/icons/arrow-prev.png";
-import news from "../../assets/imgs/parking.png";
 import { useGetNewsQuery } from "../../api/news/news.api";
 
 function News() {
@@ -23,13 +22,15 @@ function News() {
             {data.map((item) => (
               <div className="news__card">
                 <div className="news__card-img">
-                  <img src={item.main_image} alt="image" className="news__card-bg" />
-                <button className="news__card-btn">{item.created_at}</button>
+                  <img
+                    src={item.main_image}
+                    alt="image"
+                    className="news__card-bg"
+                  />
+                  <button className="news__card-btn">{item.created_at}</button>
                 </div>
                 <div className="news__card-mb">
-                  <h3 className="news__card-title">
-                    {item.title}
-                  </h3>
+                  <h3 className="news__card-title">{item.title}</h3>
                   <button className=" news__card-btn-mb">25.07.2024</button>
                 </div>
               </div>

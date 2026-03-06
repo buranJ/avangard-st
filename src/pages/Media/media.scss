@@ -27,10 +27,19 @@
         gap: 50px;
     }
 
+    &__img{
+        width: 360px;
+        height: 201px;
+        border-radius: 31px;
+    }
+
     &__card {
         display: flex;
         gap: 24px;
         align-items: center;
+        text-decoration: none;
+
+      
 
         &-info {
             display: flex;
@@ -48,6 +57,7 @@
             line-height: 110.00000000000001%;
             letter-spacing: 0%;
             max-width: 709px;
+            text-decoration: none;
         }
 
         &-date {
