@@ -31,9 +31,9 @@ function App() {
       {/* <Realized/> */}
       {/* <News/> */}
       {/* <RealizedCard/> */}
-      <Media/>
+      {/* <Media/> */}
       {/* <Contacts/> */}
-      {/* <Technical/> */}
+      <Technical/>
       {/* <Numbers /> */}
       {/* <About /> */}
     </>

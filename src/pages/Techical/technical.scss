@@ -65,6 +65,11 @@
         justify-content: space-between;
         gap: 24px;
 
+        img {
+            object-fit: cover;
+            border-radius: 27px;
+        }
+
         &-left {
             display: flex;
             flex-direction: column;
@@ -85,11 +90,13 @@
         &-1 {
             width: 456px;
             height: 456px;
+            object-fit: cover;
         }
 
         &-2 {
             width: 456px;
             height: 272px;
+
         }
 
         &-3 {
@@ -240,4 +247,3 @@
         }
     }
 }
-
