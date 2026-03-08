@@ -1,7 +1,12 @@
 import "./contacts.scss"
 import media from "../../assets/icons/sm.png"
+import { useGetContactQuery } from "../../api/contact/contact.api";
 
 function Contacts() {
+    const { data, isLoading, error } = useGetContactQuery();
+    console.log(data);
+    if (isLoading) return <div>Loading...</div>;
+    if (error) return <div>Error...</div>;
     return (
         <section className="contacts">
             <div className="container">
@@ -15,16 +20,12 @@ function Contacts() {
                         </div>
                         <div className="contacts__top-bot">
                             <h3 className="contacts__top-subtitle">Наши адреса</h3>
-                            <p className="contacts__top-info"><span>Головной офис:</span>
-                                ул. Токтогула 125/1, Бизнес Центр «Avangard», Tower A, 2-этаж</p>
-                            <p className="contacts__top-info"><span>Офис продаж:</span>
-                                1-этаж</p>
-                            <p className="contacts__top-info"><span>Офис продаж «Globus»:</span>
-                                ул. Токомбаева 53/1, гипермаркет «Globus»</p>
-                            <p className="contacts__top-info"><span>Офис продаж в ЖК "Елисейские Поля":</span>
-                                ул. Куттубаева 19</p>
-                            <p className="contacts__top-info"><span>Юридический адрес:</span>
-                                ул. Токтогула 125/1</p>
+                            {data.address.map((item) => (
+                                <a href={item.link} target="_blank" className="contacts__top-info">
+                                   {item.title}
+                                </a>
+                            ))}
+
                         </div>
                     </div>
                     <div className="contacts__middle">
@@ -38,11 +39,8 @@ function Contacts() {
                                     <a href="mailto:info@avangardstyle.kg" className="contacts__middle-link">info@avangardstyle.kg</a>
                                 </div>
                                 <div className="contacts__middle-info">
-                                    <h3 className="contacts__middle-title">Центральный офис продаж БЦ
-                                        “Авангард”:</h3>
-                                    <p className="contacts__middle-link">Пн – Пт: с 8:30 до 18:00</p>
-                                    <p className="contacts__middle-link">Суббота: с 9:00 до 13:00</p>
-                                    <p className="contacts__middle-link">Воскресенье: выходной</p>
+                                    <h3 className="contacts__middle-title">{data.sales_offices[0].name}</h3>
+                                    <p className="contacts__middle-link"> <div dangerouslySetInnerHTML={{ __html: data.sales_offices[0].description }} /></p>
                                 </div>
                             </div>
 
@@ -59,33 +57,17 @@ function Contacts() {
                         <div className="contacts__middle-bot">
                             <div className="contacts__middle-top contacts__middle-top-ad">
                                 <div className="contacts__middle-info">
-                                    <h3 className="contacts__middle-title">Офис продаж «Globus»:</h3>
-                                    <p className="contacts__middle-link">Пн – Пт: с 9:30 до 19:00</p>
-                                    <p className="contacts__middle-link">Суббота: с 10:30 до 16:00</p>
-                                    <p className="contacts__middle-link">Воскресенье: выходной</p>
+                                    <h3 className="contacts__middle-title">{data.sales_offices[1].name}</h3>
+                                    <p className="contacts__middle-link"> <div dangerouslySetInnerHTML={{ __html: data.sales_offices[1].description }} /></p>
                                 </div>
                                 <div className="contacts__middle-info">
-                                    <h3 className="contacts__middle-title">Офис продаж «Елисейские Поля»:</h3>
-                                    <p className="contacts__middle-link">Пн – Пт: с 9:00 до 18:00</p>
-                                    <p className="contacts__middle-link">Суббота: с 10:30 до 16:00</p>
-                                    <p className="contacts__middle-link">Воскресенье: выходной</p>
+                                    <h3 className="contacts__middle-title">{data.sales_offices[2].name}</h3>
+                                    <p className="contacts__middle-link"> <div dangerouslySetInnerHTML={{ __html: data.sales_offices[2].description }} /></p>
                                 </div>
                             </div>
                             <div className="contacts__middle-media">
-                                <a href="" className="contacts__middle-medialink"><img src={media} alt="media" />
-                                </a>
-                                <a href="" className="contacts__middle-medialink"><img src={media} alt="media" />
-                                </a>
-                                <a href="" className="contacts__middle-medialink"><img src={media} alt="media" />
-                                </a>
-                                <a href="" className="contacts__middle-medialink"><img src={media} alt="media" />
-                                </a>
-                                <a href="" className="contacts__middle-medialink"><img src={media} alt="media" />
-                                </a>
-                                <a href="" className="contacts__middle-medialink"><img src={media} alt="media" />
-                                </a>
-                                <a href="" className="contacts__middle-medialink"><img src={media} alt="media" />
-                                </a>
+                                {data.socials.map((item)=>( <a href={item.link} target="_blank" className="contacts__middle-medialink"><img src={item.svg} alt="media" />
+                                </a>))}
                             </div>
                         </div>
                     </div>
@@ -93,24 +75,23 @@ function Contacts() {
                         <div className="contacts__middle-info">
                             <h3 className="contacts__middle-title">Наши реквизиты:</h3>
                             <p className="contacts__middle-link">ОсОО «Строительная компания «Авангард стиль»</p>
-                            <p className="contacts__middle-link"><span>ИНН:</span>00412199810063</p>
-                            <p className="contacts__middle-link">999 УГКНС ККН</p>
-                            <p className="contacts__middle-link"><span>ОКПО:</span>22116708</p>
+                            <p className="contacts__middle-link contacts__middle-link-br"><span>ИНН:</span>{data.inn}</p>
+                            <p className="contacts__middle-link"><span>ОКПО:</span>{data.okpo}</p>
                         </div>
                         <div className="contacts__bottom-info">
                             <h3 className="contacts__bottom-title">Реквизиты для входящих денежных переводов в кыргызский сомах</h3>
-                            <div className="contacts__bottom-sides">
+                            <div className="contacts__bottom-sides ">
                                 <div className="contacts__bottom-side">
-                                    <p className="contacts__middle-link"><span>Получатель:</span></p>
-                                    <p className="contacts__middle-link"><span>Счет получателя:</span></p>
-                                    <p className="contacts__middle-link"><span >БИК Банка получателя:</span></p>
-                                    <p className="contacts__middle-link"><span>Банк получателя:</span></p>
+                                    <p className="contacts__middle-link"><span>{ data.som_requisites[0].title}</span></p>
+                                    <p className="contacts__middle-link"><span>{ data.som_requisites[1].title}</span></p>
+                                    <p className="contacts__middle-link"><span >{ data.som_requisites[2].title}</span></p>
+                                    <p className="contacts__middle-link"><span>{ data.som_requisites[3].title}</span></p>
                                 </div>
                                 <div className="contacts__bottom-side">
-                                    <p className="contacts__middle-link">Строительная компания Авангард Стиль ОСОО</p>
-                                    <p className="contacts__middle-link">1180000031018685</p>
-                                    <p className="contacts__middle-link">118006</p>
-                                    <p className="contacts__middle-link">Филиал «ДКИБ – М.Горький» ЗАО «Демир Кыргыз Интернэшнл Банк»</p>
+                                    <p className="contacts__middle-link">{data.title}</p>
+                                    <p className="contacts__middle-link"><div dangerouslySetInnerHTML={{ __html: data.som_requisites[0].description}} /></p>
+                                    <p className="contacts__middle-link"><div dangerouslySetInnerHTML={{ __html: data.som_requisites[1].description}} /></p>
+                                    <p className="contacts__middle-link"><div dangerouslySetInnerHTML={{ __html: data.som_requisites[2].description}} /></p>
                                 </div>
                             </div>
                         </div>
@@ -118,26 +99,20 @@ function Contacts() {
                             <h3 className="contacts__bottom-title">Реквизиты для входящих денежных переводов в USD</h3>
                             <div className="contacts__bottom-sides">
                                 <div className="contacts__bottom-side">
-                                    <p className="contacts__middle-link"><span >Beneficiary / Получатель:</span></p>
-                                    <p className="contacts__middle-link"><span >Beneficiary account / Счет получателя:</span></p>
-                                    <p className="contacts__middle-link"><span >Beneficiary bank / Банк получателя:</span></p>
-                                    <p className="contacts__middle-link contacts__bottom-text"><span >Beneficiary bank address / Адрес банка получателя:</span></p>
-                                    <p className="contacts__middle-link contacts__bottom-text"><span >Beneficiary bank swift (BIC) / Swift банка получателя:</span></p>
-                                    <p className="contacts__middle-link contacts__bottom-text"><span >Correspondent bank for USD transfers / Банк корреспондент для переводов в долларах</span></p>
+                                    <p className="contacts__middle-link"><span >{ data.dollar_requisites[0].title}</span></p>
+                                    <p className="contacts__middle-link"><span >{ data.dollar_requisites[1].title}</span></p>
+                                    <p className="contacts__middle-link"><span >{ data.dollar_requisites[2].title}</span></p>
+                                    <p className="contacts__middle-link contacts__bottom-text"><span >{ data.dollar_requisites[3].title}</span></p>
+                                    <p className="contacts__middle-link contacts__bottom-text"><span >{ data.dollar_requisites[4].title}</span></p>
+                                    <p className="contacts__middle-link contacts__bottom-text"><span >{ data.dollar_requisites[5].title}</span></p>
                                 </div>
-                                <div className="contacts__bottom-side ">
-                                    <p className="contacts__middle-link contacts__bottom-mt">SC AVANGARD STIL LLC</p>
-                                    <p className="contacts__middle-link contacts__bottom-mt">1180000031018584 USD</p>
-                                    <p className="contacts__middle-link contacts__bottom-mt">Demir Kyrgyz International Bank (Bishkek, Kyrgyzstan)</p>
-                                    <p className="contacts__middle-link contacts__bottom-mt1">245, Chui Ave., Bishkek, Kyrgyzstan / Кыргызстан, г. Бишкек, пр. Чуй 245</p>
-                                    <p className="contacts__middle-link contacts__bottom-mt">DEMIKG22</p>
-                                    <p className="contacts__middle-link contacts__bottom-text1"><span>KOOKMIN BANK</span>(Seoul, South Korea)<br /> SWIFT BIC: CZNBKRSE Address: Kookmin Bank H.Q, Sewoo Building, 115 Yeouigongwon-ro, Yeongdeungpo-gu, Seoul (Zip : 07241)</p>
-                                     <p className="contacts__middle-link">Correspondent account of DemirBank: 8D2-8-USD-01-8</p>
-                                     <p className="contacts__middle-link"><span>INTERMEDIARY BANKS:</span></p>
-                                     <p className="contacts__middle-link contacts__bottom-text2">1)<span>JPMORGAN CHASE BANK</span><br />SWIFT BIC: CHASUS33 Account#:001 1 544111</p>
-                                     <p className="contacts__middle-link contacts__bottom-text2">2)<span>CITIBANK</span><br />SWIFT BIC: CITIUS33 Account#:36049172</p>
-                                     <p className="contacts__middle-link contacts__bottom-text2">3)<span>BANK OF AMERICA YORK</span>SWIFT BIC: BOFAUS3N Account#:6550694497</p>
-                                     <p className="contacts__middle-link contacts__bottom-text2">4)<span>THE BANK OF NEW MELLON</span>SWIFT BIC: IRVTUS3N Account#:8033256958</p>
+                                <div className="contacts__bottom-side contacts__bottom-side-mb">
+                                    <p className="contacts__middle-link "><div dangerouslySetInnerHTML={{ __html: data.dollar_requisites[0].description}} /></p>
+                                    <p className="contacts__middle-link "><div dangerouslySetInnerHTML={{ __html: data.dollar_requisites[1].description}} /></p>
+                                    <p className="contacts__middle-link "><div dangerouslySetInnerHTML={{ __html: data.dollar_requisites[2].description}} /></p>
+                                    <p className="contacts__middle-link contacts__bottom-mt1"><div dangerouslySetInnerHTML={{ __html: data.dollar_requisites[3].description}}/></p>
+                                    <p className="contacts__middle-link contacts__bottom-mt"><div dangerouslySetInnerHTML={{ __html: data.dollar_requisites[4].description}}/></p>
+                                    <p className="contacts__middle-link contacts__bottom-text1"><div dangerouslySetInnerHTML={{ __html: data.dollar_requisites[5].description}}/></p>
                                 </div>
                             </div>
                         </div>
