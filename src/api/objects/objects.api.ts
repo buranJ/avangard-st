@@ -1,6 +1,6 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-import { IRequisites } from 'types/common';
+import { IRequisites } from "types/common";
 import {
   IGet3DTourListParams,
   IGet3DTourListResponse,
@@ -17,8 +17,8 @@ import {
   IGetObjectsListParams,
   IGetObjectsListResponse,
   IGetObjectsParams,
-  IGetObjectsResponse
-} from 'types/requests';
+  IGetObjectsResponse,
+} from "types/requests";
 
 export interface TransformedAdvantage {
   title: string;
@@ -26,7 +26,7 @@ export interface TransformedAdvantage {
   id: number;
 }
 
-interface TransformedResponse extends Omit<IGetObjectsResponse, 'advantages'> {
+interface TransformedResponse extends Omit<IGetObjectsResponse, "advantages"> {
   advantages?: TransformedAdvantage[];
   logo?: string; // Добавляем поле logo
   domain?: string; // Добавляем поле domain
@@ -35,70 +35,83 @@ interface TransformedResponse extends Omit<IGetObjectsResponse, 'advantages'> {
 }
 
 export const objectsApi = createApi({
-  reducerPath: 'objectsApi',
+  reducerPath: "objectsApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: `${import.meta.env.VITE_REACT_APP_API_URL}objects`
+    baseUrl: `${import.meta.env.VITE_REACT_APP_API_URL}objects`,
   }),
   endpoints: ({ query }) => ({
     getObject: query<TransformedResponse, IGetObjectsParams>({
-      query: ({ slug}) => {
+      query: ({ slug }) => {
         // ВСЕГДА используем простой endpoint /detail/slug
         // Domain используется только для URL в браузере, НЕ для API запросов
         // Данные одинаковые, меняется только URL в браузере
         return {
-          url: `/detail/${slug}`
+          url: `/detail/${slug}`,
         };
       },
-      transformResponse: (response: IGetObjectsResponse): TransformedResponse => ({
+      transformResponse: (
+        response: IGetObjectsResponse,
+      ): TransformedResponse => ({
         ...response,
-        advantages: response.advantages?.advantages?.map(({ title, svg, id }) => ({
-          title,
-          iconUrl: svg,
-          id
-        }))
-      })
+        advantages: response.advantages?.advantages?.map(
+          ({ title, svg, id }) => ({
+            title,
+            iconUrl: svg,
+            id,
+          }),
+        ),
+      }),
     }),
     getObjectsList: query<IGetObjectsListResponse, IGetObjectsListParams>({
       query: () => ({
-        url: '/list/'
-      })
+        url: "/list/",
+      }),
     }),
     getObjectsListHome: query<IGetObjectsListHome, IGetObjectsListHomeParams>({
       query: () => ({
-        url: '/list/home'
-      })
+        url: "/list/home",
+      }),
     }),
-    getObjectsFinishedList: query<IGetObjectsFinishedListResponse, IGetObjectsFinishedListParams>({
+    getObjectsFinishedList: query<
+      IGetObjectsFinishedListResponse,
+      IGetObjectsFinishedListParams
+    >({
       query: ({ category_id, page = 1, limit = 8 }) => ({
-        url: '/list/ended',
+        url: "/list/ended",
         params: {
-          category_id,
+          category_id: category_id || 1,
           page,
-          limit
-        }
-      })
+          limit,
+        },
+      }),
     }),
-    getObjectsDetailFinished: query<IGetObjectsDetailFinishedResponse, IGetObjectsDetailFinishedParams>({
+    getObjectsDetailFinished: query<
+      IGetObjectsDetailFinishedResponse,
+      IGetObjectsDetailFinishedParams
+    >({
       query: ({ slug }) => ({
-        url: `/detail/ended/${slug}`
-      })
+        url: `/detail/ended/${slug}`,
+      }),
     }),
-    getConstructionProgress: query<IGetConstructionProgressResponse, IGetConstructionProgressParams>({
+    getConstructionProgress: query<
+      IGetConstructionProgressResponse,
+      IGetConstructionProgressParams
+    >({
       query: ({ building_id }) => ({
-        url: `/construction-progress/${building_id}`
-      })
+        url: `/construction-progress/${building_id}`,
+      }),
     }),
     get3dTour: query<IGet3DTourResponse, IGet3DTourParams>({
       query: ({ id }) => ({
-        url: `/detail/3d/${id}`
-      })
+        url: `/detail/3d/${id}`,
+      }),
     }),
     get3dTourList: query<IGet3DTourListResponse, IGet3DTourListParams>({
       query: () => ({
-        url: `/list/3d`
-      })
-    })
-  })
+        url: `/list/3d`,
+      }),
+    }),
+  }),
 });
 
 export const {
@@ -111,5 +124,5 @@ export const {
   useGetConstructionProgressQuery,
   useLazyGetObjectsFinishedListQuery,
   useGet3dTourQuery,
-  useGet3dTourListQuery
+  useGet3dTourListQuery,
 } = objectsApi;

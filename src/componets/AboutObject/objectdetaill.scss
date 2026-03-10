@@ -1,6 +1,7 @@
 .detail {
     &__content {
         display: flex;
+        align-items: center;
         justify-content: space-between;
         margin-top: 30px;
     }
@@ -14,13 +15,15 @@
         color: rgba(0, 9, 27, 0.7);
     }
     &__left {
-        max-width: 503px;
+    
         margin-right: 50px;
     }
     &__btns {
         display: flex;
         flex-wrap: wrap;
+        width: 100%;
             gap: 20px;
+            margin-top: 50px;
 
     }
     &__btn {
@@ -28,22 +31,34 @@
         font-weight: 500;
         border: 1px solid rgba(0, 65, 125, 1);
         border-radius: 40px;
-        width: 240px;
-        height: 42px;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
+        width: 44%;
+   
+        padding: 10px 19px;
 
     }
     &__rigth {
         position: relative;
+        width: 50%;
+        img{
+            height: 638px;
+            border-radius:   41px 0 0 41px ;
+        }
+    
     }
     &__blog {
         display: flex;
+
         position: absolute;
         top: 500px;
-        right: 250px;
+        padding-left: 41px;
+ 
         flex-direction: column;
+        &-btns{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
     }
     &__strit {
         font-size: 30px;

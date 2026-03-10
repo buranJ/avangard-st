@@ -1,13 +1,13 @@
 import "./about.scss";
-import Bilding from "../../assets/icons/about_building.png";
-import Examination from "../../componets/Examination";
-import Materials from "../../componets/Materials";
-import History from "../../componets/HistoryCompany";
+// import Bilding from "../../assets/icons/about_building.png";
+// import Examination from "../../componets/Examination";
+// import Materials from "../../componets/Materials";
+// import History from "../../componets/HistoryCompany";
 
 function About() {
   return (
     <>
-    <section className="about">
+    {/* <section className="about">
       <div className="container">
         <div className="about__content">
           <h2 className="about__title">О нас</h2>
@@ -101,7 +101,7 @@ function About() {
 
     <Examination />
     <Materials />
-    <History />
+    <History /> */}
     </>
   );
 }
