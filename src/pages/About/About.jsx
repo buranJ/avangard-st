@@ -3,6 +3,8 @@ import Bilding from "../../assets/icons/about_building.png";
 import Examination from "../../componets/Examination";
 import Materials from "../../componets/Materials";
 import History from "../../componets/HistoryCompany";
+import Licenses from "../../componets/Licenses";
+import Certificates from "../../componets/Certificates";
 
 function About() {
   return (
@@ -102,6 +104,8 @@ function About() {
     <Examination />
     <Materials />
     <History />
+    <Licenses />
+    <Certificates />
     </>
   );
 }
