@@ -1,18 +1,18 @@
 import Panorama from "../../assets/imgs/PanoramaParkDay.png";
 import "./objectdetaill.scss";
 function AboutObject({ about }) {
-    const text=about.description
-    const parts = text.split("\r\n\r\n");
+  const text = about.description
+  const parts = text.split("\r\n\r\n");
 
 
-const firstPart = parts[0];
-const secondPart = parts[1];
-    
-    console.log(firstPart);
-    console.log(secondPart);
-    
-    
-    
+  const firstPart = parts[0];
+  const secondPart = parts[1];
+
+  console.log(firstPart);
+  console.log(secondPart);
+
+
+
   return (
     <section className="detail">
       <div className="container">
@@ -29,7 +29,7 @@ const secondPart = parts[1];
             </div>
           </div>
           <div className="detail__rigth">
-            <img src={about.first_image } alt="" className="detail__img" />
+            <img src={about.first_image} alt="" className="detail__img" />
             <div className="detail__blog">
               <p className="detail__strit">{about.address}</p>
               <div className="detail__blog-btns">
@@ -37,6 +37,26 @@ const secondPart = parts[1];
                 <div className="detail__blog-btn">{about.max_apartment}</div>
               </div>
             </div>
+          </div>
+        </div>
+        <div className="detail__mb">
+          <h3 className="detail__mb-title">Нуркамал Жетикашкаева 10А</h3>
+          <div className="detail__mb-top">
+            <p className="detail__info">
+              {firstPart}
+            </p>
+            <img src={about.first_image} alt="" className="detail__img" />
+          </div>
+          <div className="detail__mb-top">
+            <img src={about.second_image} alt="" className="detail__img-right" />
+            <p className="detail__info-right">
+              {secondPart}
+            </p>
+          </div>
+          <div className="detail__btns">
+            {about.apartments.map((item) => (
+              <div className="detail__btn">{item.title}</div>
+            ))}
           </div>
         </div>
       </div>

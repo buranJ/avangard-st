@@ -9,6 +9,12 @@ import { useParams } from "react-router-dom";
 import Numbers from "../../componets/Numbers";
 import Panorama from "../../componets/Panorama";
 import Numeration from "../../componets/Numeration";
+import Collage from "../../componets/Collage";
+import Parking from "../../componets/Parking";
+import Advantages from "../../componets/Advantages";
+import Video from "../../componets/Video";
+import Header from "../../componets/Header";
+import Footer from "../../componets/Footer";
 
 function ObjectDetail() {
   const { slug } = useParams();
@@ -25,19 +31,29 @@ function ObjectDetail() {
   if (isError) return <div>Error...</div>;
 
   console.log(objectQuery);
+
+  let arr = [];
+  for (let i = 0; i < objectQuery.gallery.images.length; i += 5) {
+    arr.push(objectQuery.gallery.images.slice(i, i + 5));
+  }
   return (
     <div>
-      <Panorama info={objectQuery}/>
-            <AboutObject about={objectQuery.about_complex}/>
-       <Numbers number={objectQuery.object_metrics}/>
+      <Header/>
+      <Panorama info={objectQuery} />
+      <AboutObject about={objectQuery.about_complex} />
+      <Numbers number={objectQuery.object_metrics} />
       <BeforAfter befor={objectQuery.before_after} />
-      <Numeration numeration={objectQuery.numeration}/>
-
-     
-
-      {/* <Loc />
-      <Near/> */}
-      {/* <Live/> */}
+      <Parking parking={objectQuery.parking_plan}/>
+      {arr.map((el) => {
+        return <Collage item={el} />;
+      })}
+      <Advantages adv={objectQuery.advantages}/>
+      <Numeration numeration={objectQuery.numeration} />
+      <Loc loc={objectQuery.location} />
+      <Near near={objectQuery.interest_nearby} />
+      <Video video={objectQuery.footer}/>
+      <Live />
+      <Footer/>
     </div>
   );
 }

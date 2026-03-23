@@ -1,14 +1,13 @@
 import "./loc.scss";
-import About from "../../assets/imgs/about.png"
-import cartRiht from "../../assets/imgs/locetionRight.png"
 
-function Loc() {
+function Loc({loc}) {
   return (
     <section className="loc">
       <div className="loc__content">
+          <h2 className="loc__title-mb">Локация</h2>
         <div className="loc__cart">
           <iframe
-            src="https://yandex.ru/map-widget/v1/?um=constructor%3Ad8df2a8a2d517805e8466ccf15786a024ae383f371dede8c1b99ac476e3ba5f2&amp;source=constructor"
+            src={loc.location_iframe_url}
             width="652"
             height="515"
             frameborder="0"
@@ -18,17 +17,15 @@ function Loc() {
           <div className="loc__info">
             <h2 className="loc__title">Локация</h2>
             <p className="loc__text">
-              Локация клубного дома идеально сочетает близость к городу и все
-              преимущества загородной жизни. Это поистине райское место для
-              создания собственного уголка комфорта и гармонии.
+        {loc.location_description}
             </p>
           </div>
         </div>
       </div>
       <div className="container">
       <div className="loc__bottom">
-            <div className="loc__bottom-img"><img src={About} alt="" /></div>
-            <div className="loc__bottom-img"><img src={cartRiht} alt="" /></div>
+            <div className="loc__bottom-img"><img src={loc.location_image_first} alt="" /></div>
+            <div className="loc__bottom-img loc__bottom-img-mb"><img src={loc.location_image_second} alt="" /></div>
         </div>
       </div>
     </section>
