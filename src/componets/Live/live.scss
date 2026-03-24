@@ -1,5 +1,6 @@
 .live {
     margin: 90px 0;
+    position: relative;
 
     &__content {
         display: flex;
@@ -52,6 +53,7 @@
             padding: 15px 192px ;
             border-radius: 31px;
             border: 0;
+            cursor: pointer;
 
         }
         &-btn1{

@@ -1,0 +1,239 @@
+.progress {
+    background-color: #fff;
+    width: 98%;
+    height: 538px;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+    position: absolute;
+    margin: auto;
+    padding: 40px;
+
+    &__content {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    &__right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        margin-left: 30px;
+
+
+    }
+
+    &__slide {
+        width: 151px;
+        height: 146px;
+    }
+
+    &__title {
+        font-family: Google Sans;
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 50px;
+        color: #00091B;
+        line-height: 110.00000000000001%;
+        letter-spacing: 0%;
+
+    }
+
+    &__btn {
+        font-family: Google Sans;
+        font-weight: 500;
+        font-style: Medium;
+        font-size: 20px;
+        color: #FFFFFF;
+        line-height: 110.00000000000001%;
+        letter-spacing: 0%;
+        text-align: center;
+        background-color: #00091B;
+        border-radius: 31px;
+        padding: 19px 0;
+        width: 100%;
+        margin-top: 12px;
+
+        &-x {
+            background: none;
+            border: 0;
+
+            &-mb {
+                display: none;
+            }
+        }
+    }
+
+    &__swiper {
+        width: 100%;
+        max-width: 473px;
+    }
+
+    &__left {
+        width: 100%;
+        height: 458px;
+    }
+
+    &__date {
+        position: relative;
+        width: 100%;
+        height: 60px;
+        margin-bottom: 12px;
+
+        &-arrow {
+            width: 30px;
+            height: 16px;
+
+            &-wrap {
+                background-color: #00091B;
+                padding: 22px 15px;
+                border-radius: 15px;
+                border: 0;
+            }
+        }
+
+        &-wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            border: 1px solid #00091B;
+            border-radius: 15px;
+            overflow: hidden;
+            background: white;
+        }
+
+        &-select {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+        }
+
+        &-left {
+            display: flex;
+            align-items: center;
+            padding-left: 15px;
+            gap: 10px;
+
+            img {
+                width: 45px;
+                height: 45px;
+            }
+        }
+    }
+}
+
+@media (max-width:900px) {
+    .progress {
+        &__title {
+            font-size: 35px;
+        }
+
+        &__right {
+            width: 55%;
+        }
+
+        &__slide {
+            width: 100px;
+            height: 100px;
+        }
+
+        &__left {
+            height: 390px;
+        }
+    }
+}
+
+@media (max-width:600px) {
+    .progress {
+        width: 120%;
+        margin-right: -9%;
+        padding: 10px;
+
+        &__title {
+            font-size: 24px;
+        }
+
+        &__content {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__right {
+            width: 350px;
+            margin-left: 0;
+            margin-top: 20px;
+            gap: 18px;
+        }
+
+        &__slide {
+            width: 112px;
+            height: 69px;
+        }
+
+        &__left {
+            height: 236px;
+            width: 350px;
+
+            &-wrap {
+                position: relative;
+            }
+        }
+
+        &__date {
+            margin-bottom: 0;
+
+            &-left {
+
+
+
+
+                img {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+
+            &-arrow {
+                width: 20px;
+                height: 10px;
+
+                &-wrap {
+                    padding: 20px 15px;
+                }
+            }
+
+            &-wrap {
+                height: 50px;
+            }
+        }
+
+        &__btn {
+            font-size: 20px;
+            padding: 14px 0;
+            margin-top: 0;
+
+            &-x {
+                display: none;
+
+
+                &-mb {
+                    display: block;
+                    position: absolute;
+                    background: none;
+                    border: 0;
+                    top: 20px;
+                    right: 20px;
+                }
+            }
+        }
+
+    }
+}

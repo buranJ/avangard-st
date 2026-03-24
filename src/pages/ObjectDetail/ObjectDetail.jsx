@@ -15,6 +15,8 @@ import Advantages from "../../componets/Advantages";
 import Video from "../../componets/Video";
 import Header from "../../componets/Header";
 import Footer from "../../componets/Footer";
+import Progress from "../../componets/Progress";
+import Architecture from "../../componets/Architecture";
 
 function ObjectDetail() {
   const { slug } = useParams();
@@ -44,6 +46,7 @@ function ObjectDetail() {
       <Numbers number={objectQuery.object_metrics} />
       <BeforAfter befor={objectQuery.before_after} />
       <Parking parking={objectQuery.parking_plan}/>
+        <Architecture/>
       {arr.map((el) => {
         return <Collage item={el} />;
       })}

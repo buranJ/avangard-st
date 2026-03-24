@@ -1,0 +1,185 @@
+.arch {
+    margin-bottom: 90px;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 60px;
+        gap: 50px;
+    }
+
+    &__title {
+        font-family: 'Google Sans', sans-serif;
+        font-weight: 700;
+        font-size: 50px;
+        color: #00091B;
+        margin-bottom: 50px;
+    }
+
+    &__cards {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 2px;
+        gap: 0 40px;
+        position: relative;
+        z-index: 2;
+
+        &-wrap {
+            position: relative;
+            padding: 250px 0;
+            margin: 0 auto;
+            width: 100%;
+        }
+    }
+
+    &__line {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background-color: #00417D;
+        transform: translateY(-50%);
+        z-index: 1;
+    }
+
+    &__card {
+        text-align: center;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 285px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 4px;
+            height: 66px;
+            background-color: #00417D;
+            transform: translateX(-50%);
+        }
+
+        &:nth-child(odd) {
+            transform: translateY(-50%);
+            padding-bottom: 70px;
+
+            &::after {
+                bottom: 0;
+            }
+        }
+
+        &:nth-child(even) {
+            transform: translateY(50%);
+            padding-top: 70px;
+
+            &::after {
+                top: 0;
+            }
+        }
+
+        &-title {
+            font-family: Google Sans;
+            font-weight: 500;
+            font-style: Medium;
+            font-size: 30px;
+            color: #00091B;
+            line-height: 110%;
+            text-align: center;
+            max-width: 285px;
+        }
+
+        &-text {
+            font-family: Google Sans;
+            font-weight: 400;
+            font-style: Regular;
+            font-size: 20px;
+            color: #00091B;
+            line-height: 110%;
+            text-align: center;
+            margin-top: 10px;
+            max-width: 285px;
+        }
+    }
+}
+
+
+
+@media (max-width: 900px) {
+    .arch {
+        &__card {
+            &-title { font-size: 24px; }
+            &-text { font-size: 18px; }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .arch {
+        margin-bottom: 50px;
+        &__title{
+            font-size: 24px;
+            margin: 0;
+        }
+        &__content{
+            gap: 30px;
+        }
+        &__cards {
+            flex-direction: column;
+            height: auto;
+            align-items: flex-start;
+            padding-left: 40px;
+            gap: 40px 0;
+
+            &-wrap { padding: 0; }
+        }
+
+        &__line {
+            top: 0;
+            bottom: 0;
+            left: 15px;
+            width: 2px;
+            height: 100%;
+            transform: none;
+        }
+
+        &__card {
+
+            &, &:nth-child(odd), &:nth-child(even) {
+                max-width: 100%; 
+                text-align: left; 
+                align-items: flex-start;
+                flex: none;
+                transform: none; 
+                padding: 0; 
+                margin-bottom: 20px;
+
+                &::after {
+                    top: 25px; 
+                    bottom: auto;
+                    left: -25px; 
+                    width: 12px; 
+                    height: 12px;
+                    border-radius: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+            &-title {
+                font-size: 19px; 
+                text-align: left;
+                max-width: 100%;
+            }
+
+            &-text {
+                font-size: 15px;
+                text-align: left;
+                max-width: 100%;
+                margin-top: 5px;
+            }
+        }
+    }
+}
