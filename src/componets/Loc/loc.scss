@@ -2,22 +2,32 @@
     &__content {
         display: flex;
         align-items: center;
+        gap: 70px;
     }
+
     &__cart {
         border-radius: 30px;
+
         iframe {
             border-radius: 30px;
         }
     }
+
     &__info {
         max-width: 503px;
 
     }
+
     &__title {
         font-weight: 700;
         font-size: 50px;
 
+        &-mb {
+            display: none;
+        }
+
     }
+
     &__text {
         margin-top: 70px;
         font-weight: 400;
@@ -31,11 +41,103 @@
         justify-content: space-around;
         gap: 40px;
     }
+
     &__bottom-img {
         height: 388px;
+
         img {
             height: 100%;
         }
     }
 
+}
+
+@media (max-width: 900px) {
+    .loc {
+
+        &__content {
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        &__cart {
+            width: 100%;
+
+            iframe {
+                width: 100%;
+                height: 400px;
+            }
+        }
+
+        &__info {
+            max-width: 100%;
+            text-align: center;
+        }
+
+
+        &__text {
+            margin-top: 20px;
+        }
+
+        &__bottom-img {
+            width: 100%;
+            height: 250px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 20px;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .loc {
+        &__title {
+            display: none;
+
+            &-mb {
+                display: block;
+            }
+        }
+
+        &__cart {
+            width: 370px;
+
+            iframe {
+                height: 292px;
+            }
+        }
+
+        &__text {
+            font-size: 15px;
+            max-width: 370px;
+            color: #00091BB2;
+        }
+
+        &__content {
+            gap: 15px;
+        }
+
+        &__bottom {
+            flex-direction: column;
+            gap: 30px;
+
+            &-img {
+                width: 370px;
+                height: 396px;
+
+                &-mb {
+                    width: 370;
+                    height: 278px;
+                    width: 370px;
+                    border-radius: 43px;
+
+                }
+
+            }
+        }
+    }
 }

@@ -30,25 +30,28 @@ function Numbers({number}) {
         </div>
         </div>
 
+<div className="numbers__mb-content">
+<img src={number.second_image} alt="park" className="numbers__mb" />
         <div className="numbers__right">
-            <div className="numbers__btn-info">
+              
+            <div className="numbers__btn-info numbers__btn-info-mb">
                 <p className="numbers__btn-num"> {number.appartament_quantity}</p>
                 <p className="numbers__btn-text">Количество квартир</p>
             </div>
-            <div className="numbers__btn-info">
+            <div className="numbers__btn-info numbers__btn-info-mb">
                 <p className="numbers__btn-num"> {number.yard_area}</p>
                 <p className="numbers__btn-text">Площадь двора</p>
             </div>
-            <div className="numbers__btn-info">
+            <div className="numbers__btn-info numbers__btn-info-mb">
                 <p className="numbers__btn-num"> {number.green_area}ГА</p>
                 <p className="numbers__btn-text">Площадь озеленения</p>
             </div>
-            <div className="numbers__btn-info">
+            <div className="numbers__btn-info numbers__btn-info-mb">
                 <p className="numbers__btn-num"> {number.childrens_playgrounds}</p>
                 <p className="numbers__btn-text">Детских площадок</p>
             </div>
         </div>
-        {/* <img src={number.second_image} alt="park" className="numbers__mb" /> */}
+        </div>
         </div>
     </section>
   )

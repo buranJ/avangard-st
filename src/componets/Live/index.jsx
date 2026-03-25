@@ -1,7 +1,16 @@
 import React from "react";
 import "./live.scss";
+import Progress from "../Progress";
+import { useState } from "react";
 
 function Live() {
+    const [open, setOpen] = useState(false)
+    function isOpen() {
+      setOpen(!open)
+    }
+    function Close() {
+      setOpen(!open)
+    }
   return (
     <section className="live">
       <div className="container">
@@ -19,10 +28,11 @@ function Live() {
             <p className="live__card-text">
             Смотрите «Этапы строительства» по ссылке:
             </p>
-            <button className="live__card-btn live__card-btn2">Посмотреть</button>
+            <button onClick={isOpen}  className="live__card-btn live__card-btn2">Посмотреть</button>
           </div>
         </div>
       </div>
+      {open && <Progress onClose={Close} />}
     </section>
   );
 }

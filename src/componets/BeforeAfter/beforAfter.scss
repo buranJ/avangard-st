@@ -1,16 +1,37 @@
 .befor {
     &__content {
-        img{
+        img {
             height: 626px;
             border-radius: 40px;
         }
+
         border-radius: 40px;
     }
+
     &__title {
         margin-top: 90px;
         margin-bottom: 70px;
         font-weight: 700;
         font-size: 50px;
         text-align: center;
+    }
+}
+
+@media (max-width:600px) {
+    .befor {
+        &__content {
+            img {
+                height: 350px;
+                border-radius: 30px;
+            }
+
+            border-radius: 30px;
+        }
+
+        &__title {
+            font-size: 24px;
+            margin-bottom: 30px;
+            margin-top: 50px;
+        }
     }
 }

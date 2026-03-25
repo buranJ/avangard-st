@@ -1,79 +1,195 @@
 .near {
-    &__content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+  margin: 50px 90px;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__mb {
+    display: none;
+  }
+
+  &__title {
+    font-family: Google Sans;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 50px;
+    color: #00091B;
+    line-height: 110.00000000000001%;
+    letter-spacing: 0%;
+    margin-bottom: 50px;
+
+  }
+
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+
+    &-line {
+      display: flex;
+      gap: 25px;
+      align-items: center;
     }
+
+    &-img {
+      width: 285px;
+      height: 285px;
+      border-radius: 21px;
+
+    }
+
+
+
+    &-title {
+      font-family: Google Sans;
+      font-weight: 500;
+      font-style: Medium;
+      font-size: 30px;
+      color: #00091B;
+      line-height: 110.00000000000001%;
+      letter-spacing: 0%;
+      max-width: 285px;
+
+    }
+
+    &-wrap {
+      position: relative;
+    }
+
+    &-time {
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-family: Google Sans;
+      font-weight: 500;
+      font-style: Medium;
+      font-size: 20px;
+      color: #FFFFFF;
+      line-height: 110.00000000000001%;
+      letter-spacing: 0%;
+      text-align: center;
+      background-color: #00091B;
+      padding: 10px 20px;
+      border-radius: 22px;
+
+    }
+  }
+}
+
+.swiper-wrapper {
+  align-items: flex-end;
+}
+
+@media (max-width: 1024px) {
+  .near {
+    margin: 40px 40px;
 
     &__title {
-        font-family: Google Sans;
-        font-weight: 700;
-        font-style: Bold;
-        font-size: 50px;
-        color: #00091B;
-        line-height: 110.00000000000001%;
-        letter-spacing: 0%;
-
-    }
-
-    &__cards {
-        display: flex;
-        justify-content: space-between;
-        gap: 68px;
+      font-size: 40px;
+      text-align: center;
     }
 
     &__card {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        position: relative;
-        height: 330px;
+      gap: 20px;
 
+      &-img {
+        width: 240px;
+        height: 240px;
+      }
 
-        ::before {
-            content: '';
-            background-image: url("../../assets/imgs/line.png");
-            background-repeat: no-repeat;
-            position: absolute;
-            top: -20px;
-            left: -25px;
-            width: 100%;
-            height: 350px;
-            z-index: -1;
+      &-title {
+        font-size: 24px;
+        max-width: 240px;
+      }
 
-        }
-
-        &-title {
-            font-family: Google Sans;
-            font-weight: 500;
-            font-style: Medium;
-            font-size: 30px;
-            color: #00091B;
-            line-height: 110.00000000000001%;
-            letter-spacing: 0%;
-
-        }
-
-        &-wrap {
-            position: relative;
-        }
-
-        &-time {
-            position: absolute;
-            top: 0;
-            right: 0;
-            font-family: Google Sans;
-            font-weight: 500;
-            font-style: Medium;
-            font-size: 20px;
-            color: #FFFFFF;
-            line-height: 110.00000000000001%;
-            letter-spacing: 0%;
-            text-align: center;
-            background-color: #00091B;
-            padding: 10px 20px;
-            border-radius: 22px;
-
-        }
+      &-time {
+        font-size: 16px;
+        padding: 8px 16px;
+      }
     }
+  }
+}
+
+
+@media (max-width: 900px) {
+  .near {
+    margin: 30px 20px;
+
+    &__title {
+      font-size: 32px;
+    }
+
+    &__card {
+      gap: 15px;
+
+
+      &-title {
+        font-size: 20px;
+      }
+
+      &-time {
+        font-size: 14px;
+        padding: 6px 12px;
+      }
+    }
+  }
+
+
+  .near__swiper {
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width:600px) {
+
+  .near {
+    &__mb {
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+
+    &__swiper {
+      display: none !important;
+    }
+
+    &__title {
+      font-size: 24px;
+    }
+
+    &__card {
+      &-wrap {
+        width: 150px;
+        height: 150px;
+        border-radius: 21px;
+      }
+
+      img {
+        width: 150px;
+        height: 150px;
+        border-radius: 21px;
+      }
+
+      &:nth-child(odd) {
+        align-items: flex-start;
+        .near__card-title {
+          text-align: left;
+        }
+      }
+
+      &:nth-child(even) {
+        align-items: flex-end;
+        .near__card-title {
+          text-align: right;
+        }
+      }
+
+
+    }
+  }
 }

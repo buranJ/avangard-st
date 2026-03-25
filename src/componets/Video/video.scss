@@ -1,0 +1,21 @@
+.video{
+    margin-top: 90px;
+
+    &__content{
+        display: flex;
+        justify-content: center;
+    }
+    iframe{
+        width: 98%;
+        height: 632px;
+        border-radius: 29px;
+    }
+}
+@media (max-width:600px) {
+    .video{
+        iframe{
+            height: 223px;
+            border-radius: 17px;
+        }
+    }
+}

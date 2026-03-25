@@ -1,0 +1,43 @@
+.parking {
+    margin: 90px 0;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+
+    &__title {
+        font-family: Google Sans;
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 50px;
+        color: #00091B;
+        line-height: 110.00000000000001%;
+        letter-spacing: 0%;
+
+    }
+
+    img {
+        width: 78%;
+        height: 778px;
+
+    }
+}
+
+@media (max-width:600px) {
+    .parking{
+        margin: 50px 0;
+        &__title{
+            font-size: 24px;
+        }
+        &__content{
+            gap: 30px;
+        }
+        img{
+            width: 370px;
+            height: 324px;
+        }
+    }
+}

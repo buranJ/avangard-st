@@ -1,3 +1,4 @@
+import "../../pages/Techical/technical.scss"
 function Collage({ item }) {
   return (
     <div className="tech__img">
