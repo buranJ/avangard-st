@@ -72,6 +72,7 @@
             line-height: 110.00000000000001%;
             letter-spacing: 0%;
             text-align: center;
+            text-decoration: none;
 
             span {
                 font-weight: 700;
@@ -131,6 +132,9 @@
             letter-spacing: 0%;
             text-align: left;
             text-decoration: none;
+            &-br{
+                max-width: 152px;
+            }
 
             span {
                 font-weight: 700;
@@ -413,6 +417,10 @@
             }
             &-sides{
                 gap: 21px;
+
+                &-mb{
+                    gap: 25px;
+                }
             }
 
             &-side {
@@ -425,7 +433,8 @@
                 margin-top: -15px;
             }
             &-mt{
-                margin: 5px;
+                margin-top: -15px;
+                margin-bottom: -5px;
             }
             &-text1{
                 margin-top: 20px;

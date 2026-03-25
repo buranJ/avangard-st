@@ -1,11 +1,10 @@
 import React from "react";
 import ReactBeforeSliderComponent from "react-before-after-slider-component";
 import "react-before-after-slider-component/dist/build.css";
-import befor from "../../assets/imgs/befor.png";
-import after from "../../assets/imgs/after.png";
 import "./beforAfter.scss";
 
-function BeforAfter() {
+function BeforAfter({ befor }) {
+  // console.log(befor);
   return (
     <section className="befor">
       <div className="container">
@@ -14,8 +13,8 @@ function BeforAfter() {
         </div>
         <div className="befor__content">
           <ReactBeforeSliderComponent
-            firstImage={{ imageUrl: befor }}
-            secondImage={{ imageUrl: after }}
+            firstImage={{ imageUrl: befor.day_image }}
+            secondImage={{ imageUrl: befor.night_image }}
           />
         </div>
       </div>
