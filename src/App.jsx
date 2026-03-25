@@ -23,7 +23,7 @@ import Construction from "./pages/Construction";
 function App() {
   return (
     <>
-      <ObjectDetail />
+      {/* <ObjectDetail /> */}
       {/* <ObjectDetail /> */}
       {/* <Realized/> */}
       {/* <News/> */}
@@ -32,8 +32,8 @@ function App() {
       {/* <Contacts/> */}
       {/* <Technical/> */}
       {/* <Numbers /> */}
-      {/* <About /> */}
-      <Construction />
+      <About />
+      {/* <Construction /> */}
     </>
   );
 }

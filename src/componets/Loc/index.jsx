@@ -10,7 +10,7 @@ function Loc({loc}) {
             src={loc.location_iframe_url}
             width="652"
             height="515"
-            frameborder="0"
+            frameBorder="0"
           ></iframe>
         </div>
         <div className="container">

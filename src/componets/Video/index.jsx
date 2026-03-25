@@ -5,7 +5,7 @@ function Video({ video }) {
         <section className="video">
             <div className="container">
                 <div className="video__content">
-                    <iframe src={video.youtube_url} frameborder="0"></iframe>
+                    <iframe src={video.youtube_url} frameBorder="0"></iframe>
                 </div>
             </div>
         </section>

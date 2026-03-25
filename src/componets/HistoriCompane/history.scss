@@ -18,10 +18,23 @@
         margin-top: 30px;
         font-size: 20px;
     }
+    &__img {
+        width: 162px;
+        height: 172px;
+    }
     &__wrap {
         display: flex;
         text-align: start;
         align-items: center ;
         gap: 80px;
+    }
+            .swiper {
+            margin-top: 50px;
+      width: 100%;
+    }
+
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
     }
 }

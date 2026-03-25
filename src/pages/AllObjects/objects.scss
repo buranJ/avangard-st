@@ -1,0 +1,77 @@
+.AllObjects {
+    &__bg {
+        background-image: url("../../assets/imgs/pamorama-hero.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 776px;
+    }
+
+    &__content-right {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        padding: 116px 0 116px 0;
+    }
+
+    &__content-left {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        padding: 116px 0 116px 0;
+    }
+
+    &__title {
+        font-family: Vetren;
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 100px;
+        color: #fff;
+        line-height: 110.00000000000001%;
+        letter-spacing: -3%;
+        text-transform: uppercase;
+        text-align: left;
+
+    }
+
+    &__text {
+        font-family: Google Sans;
+        font-weight: 500;
+        font-style: Medium;
+        font-size: 30px;
+        color: #fff;
+        line-height: 110.00000000000001%;
+        letter-spacing: 0%;
+        text-align: center;
+
+    }
+
+    &__btn {
+        font-family: Google Sans;
+        font-weight: 500;
+        font-style: Medium;
+        font-size: 20px;
+        color: #fff;
+        line-height: 110.00000000000001%;
+        letter-spacing: 0%;
+        text-align: center;
+        background: #00417D;
+        border-radius: 31px;
+        padding: 15px 30px;
+        border: 0;
+        margin-top: 200px;
+
+    }
+}
+
+.text-left {
+    font-size: 20px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.text-right {
+    font-size: 20px;
+    margin-top: 20px;
+    text-align: right;
+}
