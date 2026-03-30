@@ -1,11 +1,11 @@
 import React from "react";
+import { useParams } from "react-router-dom";
+import { useGetObjectQuery } from "../../api/objects/objects.api";
 import BeforAfter from "../../componets/BeforeAfter";
 import AboutObject from "../../componets/AboutObject";
 import Loc from "../../componets/Loc";
 import Near from "../../componets/Near";
 import Live from "../../componets/Live";
-import { useGetObjectQuery } from "../../api/objects/objects.api";
-import { useParams } from "react-router-dom";
 import Numbers from "../../componets/Numbers";
 import Panorama from "../../componets/Panorama";
 import Numeration from "../../componets/Numeration";
@@ -15,11 +15,10 @@ import Advantages from "../../componets/Advantages";
 import Video from "../../componets/Video";
 import Header from "../../componets/Header";
 import Footer from "../../componets/Footer";
-import Progress from "../../componets/Progress";
 import Architecture from "../../componets/Architecture";
 
 function ObjectDetail() {
-  const { slug } = useParams();
+  const { slug } = useParams(); 
   const {
     data: objectQuery,
     isLoading,
@@ -27,36 +26,51 @@ function ObjectDetail() {
   } = useGetObjectQuery({
     slug: slug || "panoramapark",
   });
-  // data.respone(objectQuery);
 
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Error...</div>;
+  if (!objectQuery) return <div>Object not found</div>;
 
   console.log(objectQuery);
 
   let arr = [];
-  for (let i = 0; i < objectQuery.gallery.images.length; i += 5) {
-    arr.push(objectQuery.gallery.images.slice(i, i + 5));
+  if (objectQuery.gallery?.images) {
+    for (let i = 0; i < objectQuery.gallery.images.length; i += 5) {
+      arr.push(objectQuery.gallery.images.slice(i, i + 5));
+    }
   }
+
   return (
     <div>
-      <Header/>
+      <Header />
       <Panorama info={objectQuery} />
-      <AboutObject about={objectQuery.about_complex} />
-      <Numbers number={objectQuery.object_metrics} />
-      <BeforAfter befor={objectQuery.before_after} />
-      <Parking parking={objectQuery.parking_plan}/>
-        <Architecture/>
-      {arr.map((el) => {
-        return <Collage item={el} />;
-      })}
-      <Advantages adv={objectQuery.advantages}/>
-      <Numeration numeration={objectQuery.numeration} />
-      <Loc loc={objectQuery.location} />
-      <Near near={objectQuery.interest_nearby} />
-      <Video video={objectQuery.footer}/>
+      {objectQuery.about_complex && (
+        <AboutObject about={objectQuery.about_complex} />
+      )}
+      {objectQuery.object_metrics && (
+        <Numbers number={objectQuery.object_metrics} />
+      )}
+      {objectQuery.before_after && (
+        <BeforAfter befor={objectQuery.before_after} />
+      )}
+      {objectQuery.parking_plan && (
+        <Parking parking={objectQuery.parking_plan} />
+      )}
+      <Architecture />
+      {arr.map((el, index) => (
+        <Collage key={index} item={el} />
+      ))}
+      {objectQuery.advantages && <Advantages adv={objectQuery.advantages} />}
+      {objectQuery.numeration && (
+        <Numeration numeration={objectQuery.numeration} />
+      )}
+      {objectQuery.location && <Loc loc={objectQuery.location} />}
+      {objectQuery.interest_nearby && (
+        <Near near={objectQuery.interest_nearby} />
+      )}
+      {objectQuery.footer && <Video video={objectQuery.footer} />}
       <Live />
-      <Footer/>
+      <Footer />
     </div>
   );
 }

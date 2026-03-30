@@ -2,6 +2,10 @@
     background-color: #EEEEEE;
     padding: 70px 40px;
 
+    &__arr {
+        width: 40px;
+    }
+
     &__content {
         display: flex;
         flex-direction: column;
@@ -51,7 +55,7 @@
 
         &-img1-wrapper {
             position: relative;
-            overflow: hidden; 
+            overflow: hidden;
             border-radius: 28px;
             width: 330px;
         }
@@ -86,7 +90,7 @@
         &:hover .objects__card-img2 {
             transform: translateY(-30%);
         }
-       
+
         &:hover .objects__card-img1 {
             transform: translateY(-30%);
         }
@@ -168,5 +172,24 @@
             justify-content: center;
             margin-top: 0;
         }
+    }
+}
+
+.objects__card {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+}
+
+.objects__card-btn {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        opacity: 0.9;
     }
 }
