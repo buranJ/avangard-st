@@ -9,21 +9,17 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-function HistoriCompane() {
+function HistoriCompane({ list }) {
+  
   return (
     <>
       <section className="history">
         <div className="container">
           <div className="history__content">
-            <h2 className="history__title">История компании</h2>
-            <h3 className="history__subtitle">
-              Основана в 1998 году, одна из старейших компаний Кыргызской
-              Республики
-            </h3>
-            <p className="history__info">
-              За многолетнюю успешную работу «Авангард Стиль» удостоен множества
-              заслуженных наград:
-            </p>
+            <h2 className="history__title">{list.title}</h2>
+            <div dangerouslySetInnerHTML={{__html: list.description}} className="history__subtitle">
+
+            </div>
             <div className="history__wrap">
               <img src={Medal} alt="" className="history__img" />
               <ul className="history__list">
@@ -51,30 +47,22 @@ function HistoriCompane() {
               spaceBetween={30}
               navigation
             >
-              <SwiperSlide>
+              {
+                list.gramotas.map((item) => (
+                <SwiperSlide>
+                <div className="licenses__card">
+                  <img src={item.image} alt="licenses" className="history__icon-img" />
+                  <p className="history__icon-title">{item.title}</p>
+                </div>
+              </SwiperSlide>
+                ))
+              }
+              {/* <SwiperSlide>
                 <div className="licenses__card">
                   <img src={HistoryImg} alt="licenses" />
                   <p>КРЦ-2 №02000 ОТ 05.02.2008 Г</p>
                 </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="licenses__card">
-                  <img src={HistoryImg} alt="licenses" />
-                  <p>КРЦ-2 №02000 ОТ 05.02.2008 Г</p>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="licenses__card">
-                  <img src={HistoryImg} alt="licenses" />
-                  <p>КРЦ-2 №02000 ОТ 05.02.2008 Г</p>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="licenses__card">
-                  <img src={HistoryImg} alt="licenses" />
-                  <p>КРЦ-2 №02000 ОТ 05.02.2008 Г</p>
-                </div>
-              </SwiperSlide>
+              </SwiperSlide> */}
             </Swiper>
           </div>
         </div>

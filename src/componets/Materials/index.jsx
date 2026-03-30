@@ -1,24 +1,15 @@
 import "./materials.scss";
 
-function Materials() {
+function Materials({object}) {
+
+  
   return (
     <section className="material">
       <div className="container">
         <div className="material__content">
-          <h2 className="material__title">Только качественные материалы</h2>
-          <p className="material__info">
-            Для успешной и качественной реализации всех направлений своей
-            деятельности мы используем только современные, эффективные
-            строительные материалы, учитываем опыт зарубежных строительных
-            компаний, обращаемся к инновациям в проектировании, строительстве,
-            реконструкции и ремонте. <br /> <br /> «Авангард Стиль» по праву гордится
-            современной технической базой: строительная техника, транспортные
-            средства, механизмы и оборудование, которые необходимы при
-            возведении объекта любой сложности. Техника, используемая нашей
-            компанией, обладает высокой производительностью, превосходными
-            техническими характеристиками и достойными эксплуатационными
-            показателями, что свидетельствует об её высоком уровне.
-          </p>
+          <h2 className="material__title">{object.title}</h2>
+          <div dangerouslySetInnerHTML={{ __html: object.description }} className="material__info">
+          </div>
           <div className="material__partners">
             <h3 className="material__partners-subtitle">Среди наших партнеров</h3>
             <div className="material__partners-wrap">

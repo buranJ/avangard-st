@@ -8,13 +8,15 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";                                  
 
-function Certificates() {
+function Certificates({certificates}) {
+    console.log(certificates);
+    
   return (
     <section className="certificates">
         <div className="container">
             <div className="certificates__content">       
-                <h2 className="certificates__title">Сертификаты</h2>
-                <p className="certificates__info">«Авангард Стиль» это команда сертифицированных профессионалов в области строительства:</p>
+                <h2 className="certificates__title">{certificates.title}</h2>
+                <p dangerouslySetInnerHTML={{ __html: certificates.description }} className="certificates__info"></p>
                 <ul className="certificates__list">
                     <li>Специалисты строительства инжиниринговых сетей и систем;</li>
                     <li>Специалисты по инжиниринговым услугам;</li>
@@ -30,54 +32,16 @@ function Certificates() {
                             spaceBetween={30}
                             navigation
                             >
-                        <SwiperSlide>
-                                <div className="certificates__card">
-                                    <img src={CertificatesImg} alt="Сертификат" />
-                                    <p>
-                                        Почетная грамота заместителю генерального директора Абыкееву К.К.
-                                    </p>
-                                </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                                <div className="certificates__card">
-                                    <img src={CertificatesImg} alt="Сертификат" />
-                                    <p>
-                                        Почетная грамота заместителю генерального директора Абыкееву К.К.
-                                    </p>
-                                </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                                <div className="certificates__card">
-                                    <img src={CertificatesImg} alt="Сертификат" />
-                                    <p>
-                                        Почетная грамота заместителю генерального директора Абыкееву К.К.
-                                    </p>
-                                </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                                <div className="certificates__card">
-                                    <img src={CertificatesImg} alt="Сертификат" />
-                                    <p>
-                                        Почетная грамота заместителю генерального директора Абыкееву К.К.
-                                    </p>
-                                </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                                <div className="certificates__card">
-                                    <img src={CertificatesImg} alt="Сертификат" />
-                                    <p>
-                                        Почетная грамота заместителю генерального директора Абыкееву К.К.
-                                    </p>
-                                </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                                <div className="certificates__card">
-                                    <img src={CertificatesImg} alt="Сертификат" />
-                                    <p>
-                                        Почетная грамота заместителю генерального директора Абыкееву К.К.
-                                    </p>
-                                </div>
-                        </SwiperSlide>
+                                {
+                                    certificates.sertificats.map((item) => (
+                                        <SwiperSlide>
+                                            <div className="certificates__card">
+                                                <img src={item.image} alt="Сертификат" />
+                                                <p>{item.title}</p>
+                                            </div>
+                                        </SwiperSlide>
+                                    ))
+                                }
                         </Swiper>
                     </div> 
             </div>

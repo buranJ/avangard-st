@@ -1,27 +1,36 @@
 .about {
+    margin-top: 80px;
+
     &__content {
         display: flex;
         align-items: center;
         flex-direction: column;
     }
+
     &__title {
         font-weight: 700;
         font-size: 50px;
     }
+
     &__info {
         font-size: 20px;
         text-align: center;
     }
+
     &__icons {
         margin-top: 50px;
         display: flex;
-        flex-wrap: wrap;
+        justify-content: space-between;
+        flex-wrap: wrap-reverse;
         text-align: center;
         gap: 75px;
     }
-    &__icon-img {
 
+    &__icon-img {
+        width: 100px;
+        height: 100px;
     }
+
     &__icon-text {
         max-width: 280px;
         font-weight: 700;
@@ -33,9 +42,11 @@
         display: flex;
         gap: 25px;
     }
+
     &__video {
         display: flex;
         border-radius: 27px;
+
         iframe {
             border-radius: 27px;
         }
@@ -48,10 +59,12 @@
         text-align: center;
         gap: 50px;
     }
+
     &__specialist-title {
         font-weight: 700;
         font-size: 50px;
     }
+
     &__specialist-text {
         font-size: 20px;
     }

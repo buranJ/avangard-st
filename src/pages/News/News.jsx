@@ -3,7 +3,7 @@ import "./news.scss";
 import arrow from "../../assets/icons/arrow-prev.png";
 import { useGetNewsQuery } from "../../api/news/news.api";
 
-function News() {
+function NewsPage() {
   const { data, isLoading, error } = useGetNewsQuery();
   console.log(data);
   if (isLoading) return <div>Loading...</div>;
@@ -43,4 +43,4 @@ function News() {
   );
 }
 
-export default News;
+export default NewsPage;

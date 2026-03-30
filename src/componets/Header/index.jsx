@@ -47,7 +47,12 @@ function Header() {
                     <Link to="/news">Новости</Link>
                   </li>
                   <li className="header__model-list">
-                    <Link to="/media">Видео</Link>
+                    <a
+                      target="_blank"
+                      href="https://www.youtube.com/c/AvangardStyleKGZ"
+                    >
+                      Видео
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -81,10 +86,7 @@ function Header() {
               <Link to="/contacts">Контакты</Link>
             </li>
           </ul>
-
-          <Link to="/contacts">
-            <button className="header__btn">Связаться</button>
-          </Link>
+          <button className="header__btn">Связаться</button>
         </div>
       </div>
       {open && <Burger onClose={Close} />}
